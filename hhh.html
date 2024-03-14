@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic Social Share Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Your CSS styles for the social share menu */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .social-share-menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .social-share-menu li {
+            margin-right: 10px;
+        }
+        .social-share-menu li a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ff0000; /* Red background color */
+            color: #fff;
+            transition: background 0.3s ease;
+        }
+        .social-share-menu li a:hover {
+            background: #cc0000; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="social-share-menu">
+    <ul>
+        <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+        <!-- Add more social media icons and links as needed -->
+    </ul>
+</div>
+
+<script>
+    // Get all social media links
+    const socialLinks = document.querySelectorAll('.social-share-menu a');
+
+    // Function to handle click event
+    function shareLink(e) {
+        e.preventDefault();
+
+        // Get the href attribute of the clicked link
+        const link = e.target.closest('a').getAttribute('href');
+
+        // Open a new window with the share link
+        window.open(link, '_blank');
+    }
+
+    // Attach click event listeners to all social media links
+    socialLinks.forEach(link => {
+        link.addEventListener('click', shareLink);
+    });
+</script>
+
+</body>
+</html>
